@@ -4,16 +4,16 @@ const route = useRoute();
 const items = computed(() => [
   {
     label: "Docs",
-    to: "/docs",
+    // to: "/docs",
     active: route.path.startsWith("/docs"),
   },
   {
     label: "Pricing",
-    to: "/pricing",
+    // to: "/pricing",
   },
   {
     label: "Blog",
-    to: "/blog",
+    // to: "/blog",
   },
 ]);
 </script>
@@ -32,7 +32,7 @@ const items = computed(() => [
     <template #right>
       <UColorModeButton />
 
-      <UButton
+      <!-- <UButton
         icon="i-lucide-log-in"
         color="neutral"
         variant="ghost"
@@ -54,7 +54,7 @@ const items = computed(() => [
         trailing-icon="i-lucide-arrow-right"
         class="hidden lg:inline-flex"
         to="/signup"
-      />
+      /> -->
     </template>
 
     <template #body>
@@ -62,7 +62,7 @@ const items = computed(() => [
 
       <USeparator class="my-6" />
 
-      <UButton
+      <!-- <UButton
         label="Sign in"
         color="neutral"
         variant="subtle"
@@ -70,7 +70,7 @@ const items = computed(() => [
         block
         class="mb-3"
       />
-      <UButton label="Sign up" color="neutral" to="/signup" block />
+      <UButton label="Sign up" color="neutral" to="/signup" block /> -->
     </template>
   </UHeader>
 </template>
