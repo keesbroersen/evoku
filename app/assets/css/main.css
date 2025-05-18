@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "@nuxt/ui-pro";
+
+@source "../../../content*";
+
+@theme static {
+  --font-sans: "Montserrat", sans-serif;
+
+  --color-blue-50: #f0f8ff;
+  --color-blue-100: #e1f0fd;
+  --color-blue-200: #bce1fb;
+  --color-blue-300: #81cbf8;
+  --color-blue-400: #37aef2;
+  --color-blue-500: #1497e3;
+  --color-blue-600: #0878c1;
+  --color-blue-700: #08609c;
+  --color-blue-800: #0b5181;
+  --color-blue-900: #0f446b;
+  --color-blue-950: #0a2c47;
+}
+
+.dark {
+  --ui-bg: var(--ui-color-neutral-950);
+  --ui-bg-muted: var(--ui-color-neutral-900);
+  --ui-bg-elevated: var(--ui-color-neutral-900);
+  --ui-bg-accented: var(--ui-color-neutral-800);
+}
