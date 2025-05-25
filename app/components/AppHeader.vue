@@ -3,17 +3,19 @@ const route = useRoute();
 
 const items = computed(() => [
   {
-    label: "Docs",
-    // to: "/docs",
-    active: route.path.startsWith("/docs"),
+    label: "Werk",
+    to: "/werk",
+    active: route.path.startsWith("/werk"),
   },
   {
-    label: "Pricing",
-    // to: "/pricing",
+    label: "Over",
+    to: "/over",
+    active: route.path.startsWith("/over"),
   },
   {
-    label: "Blog",
-    // to: "/blog",
+    label: "Contact",
+    to: "/contact",
+    active: route.path.startsWith("/contact"),
   },
 ]);
 </script>
