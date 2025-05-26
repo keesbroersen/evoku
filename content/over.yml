@@ -1,0 +1,20 @@
+title: Over
+description: Wie zijn we? Welke diensten leveren we?
+seo:
+  title: Evoku - Over
+  description: Wie zijn we? Welke diensten leveren we?
+hero:
+  links:
+    - label: Plan een gesprek in
+      icon: i-lucide-calendar-days
+      trailing: true
+      to: https://ui.nuxt.com/getting-started/installation/pro/nuxt
+      target: _blank
+      size: xl
+    - label: Meer informatie
+      icon: i-lucide-info
+      size: xl
+      color: neutral
+      variant: subtle
+      to: https://github.com/nuxt-ui-pro/saas
+      target: _blank

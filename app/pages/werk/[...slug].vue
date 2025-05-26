@@ -8,7 +8,7 @@ import {
 const route = useRoute();
 
 const { data: page } = await useAsyncData(route.path, () =>
-  queryCollection("blog").path(route.path).first()
+  queryCollection("werk").path(route.path).first()
 );
 if (!page.value)
   throw createError({
@@ -17,35 +17,35 @@ if (!page.value)
     fatal: true,
   });
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
-  queryCollectionItemSurroundings("blog", route.path, {
+  queryCollectionItemSurroundings("werk", route.path, {
     fields: ["description"],
   })
 );
 
 const navigation = inject<Ref<ContentNavigationItem[]>>("navigation", ref([]));
-const blogNavigation = computed(
-  () => navigation.value.find((item) => item.path === "/blog")?.children || []
+const werkNavigation = computed(
+  () => navigation.value.find((item) => item.path === "/werk")?.children || []
 );
 
 const breadcrumb = computed(() =>
   mapContentNavigation(
-    findPageBreadcrumb(blogNavigation?.value, page.value)
+    findPageBreadcrumb(werkNavigation?.value, page.value)
   ).map(({ icon, ...link }) => link)
 );
 
-if (page.value.image) {
-  defineOgImage({ url: page.value.image });
-} else {
-  defineOgImageComponent(
-    "Blog",
-    {
-      headline: breadcrumb.value.map((item) => item.label).join(" > "),
-    },
-    {
-      fonts: ["Geist:400", "Geist:600"],
-    }
-  );
-}
+// if (page.value.image) {
+//   defineOgImage({ url: page.value.image });
+// } else {
+//   defineOgImageComponent(
+//     "Werk",
+//     {
+//       headline: breadcrumb.value.map((item) => item.label).join(" > "),
+//     },
+//     {
+//       fonts: ["Geist:400", "Geist:600"],
+//     }
+//   );
+// }
 
 const title = page.value?.seo?.title || page.value?.title;
 const description = page.value?.seo?.description || page.value?.description;
@@ -72,9 +72,9 @@ const formatDate = (dateString: Date) => {
   <UMain class="mt-20 px-2">
     <UContainer class="relative min-h-screen">
       <UPage v-if="page">
-        <ULink to="/blog" class="text-sm flex items-center gap-1">
+        <ULink to="/werk" class="text-sm flex items-center gap-1">
           <UIcon name="lucide:chevron-left" />
-          Blog
+          Werk
         </ULink>
         <div class="flex flex-col gap-3 mt-8">
           <div

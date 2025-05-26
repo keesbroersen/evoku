@@ -26,7 +26,6 @@ const items = computed(() => [
       <NuxtLink to="/">
         <Logo class="w-auto h-8 shrink-0" />
       </NuxtLink>
-      <Menu />
     </template>
 
     <UNavigationMenu :items="items" variant="link" />

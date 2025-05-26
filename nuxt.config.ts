@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/content", "@nuxt/eslint", "@nuxt/ui-pro"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/eslint",
+    "@nuxt/ui-pro",
+    "@nuxt/image",
+  ],
   devtools: { enabled: true },
   future: {
     compatibilityVersion: 4,

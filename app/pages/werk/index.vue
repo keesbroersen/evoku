@@ -1,15 +1,15 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData("werk-page", () => {
-  return queryCollection("pages").path("/werk").first();
-});
+const { data: page } = await useAsyncData("werk", () =>
+  queryCollection("werk").first()
+);
 if (!page.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: "Page not found",
+    statusMessage: "Work page not found",
     fatal: true,
   });
 }
-const { data: cases } = await useAsyncData("werk", () =>
+const { data: cases } = await useAsyncData("cases", () =>
   queryCollection("werk").order("date", "DESC").all()
 );
 if (!cases.value) {
@@ -33,7 +33,7 @@ useSeoMeta({
     <UPageHero
       :title="page.title"
       :description="page.description"
-      :links="page.hero.links"
+      :links="page.hero?.links"
     >
       <template #top>
         <div
@@ -52,7 +52,7 @@ useSeoMeta({
           :title="work.title"
           :description="work.description"
           :image="work.image"
-          :to="work.to"
+          :to="`/werk/${work.slug}`"
         />
       </UPageGrid>
     </UPageSection>
